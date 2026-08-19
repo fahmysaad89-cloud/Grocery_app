@@ -1,9 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:gorcery_app/screens/home.dart';
+import 'package:gorcery_app/screens/login_screen.dart';
 import 'package:gorcery_app/screens/widges/signup_body.dart';
 import 'package:gorcery_app/screens/widges/signup_header.dart';
 
-class SignupScreen extends StatelessWidget {
+class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
+
+  @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
+  final _usernamecontroller = TextEditingController();
+  final _emailcontroller = TextEditingController();
+  final _passwordcontroller = TextEditingController();
+  final formKey = GlobalKey<FormState>();
+
+  @override
+  void dispose() {
+    _usernamecontroller.dispose();
+    _emailcontroller.dispose();
+    _passwordcontroller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -11,11 +31,11 @@ class SignupScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.11),
-            child: SingleChildScrollView(
-              child: Form(
-                key: formkey,
+          child: Form(
+            key: formKey,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.11),
+              child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -63,7 +83,13 @@ class SignupScreen extends StatelessWidget {
                     InkWell(
                       onTap: () {
                         if (formKey.currentState!.validate()) {
-                          Navigator.pop(context);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LoginScreen(),
+                            ),
+                          );
+                          print("gg");
                         }
                       },
                       child: Container(
@@ -93,9 +119,4 @@ class SignupScreen extends StatelessWidget {
       ),
     );
   }
-}
-
-// ignore: camel_case_types
-class formKey {
-  static get currentState => null;
 }

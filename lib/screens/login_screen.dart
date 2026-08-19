@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gorcery_app/gorcery_app.dart';
+import 'package:gorcery_app/screens/home.dart';
 import 'package:gorcery_app/screens/signup_screen.dart';
 import 'package:gorcery_app/screens/widges/login_body.dart';
 import 'package:gorcery_app/screens/widges/login_headr.dart';
@@ -32,9 +32,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       if (_formkey.currentState!.validate()) {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (_) => const GorceryApp()),
+                          MaterialPageRoute(builder: (context) => Home()),
                         );
-                      } else {}
+                      }
                     },
                     child: Container(
                       padding: EdgeInsets.symmetric(vertical: 24.5),
