@@ -25,6 +25,7 @@ class ShopScreen extends StatelessWidget {
               ),
             ],
           ),
+          SizedBox(height: 20),
           TextFormField(
             cursorColor: Color(0xff53B175),
             onTapOutside: (v) {
