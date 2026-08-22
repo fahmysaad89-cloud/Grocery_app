@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gorcery_app/screens/home.dart';
 import 'package:gorcery_app/screens/login_screen.dart';
 import 'package:gorcery_app/screens/widges/signup_body.dart';
 import 'package:gorcery_app/screens/widges/signup_header.dart';
@@ -27,7 +26,6 @@ class _SignupScreenState extends State<SignupScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Key? formkey;
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
