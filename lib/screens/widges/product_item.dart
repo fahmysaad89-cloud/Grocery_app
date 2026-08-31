@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:gorcery_app/models/product_model.dart';
 
 class ProductItem extends StatelessWidget {
-  double price;
-  ProductItem({super.key, required this.price});
+  final ProductModel product;
+
+  const ProductItem({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -18,18 +20,20 @@ class ProductItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Center(child: Image.asset('assets/icons/apple.png')),
-          SizedBox(height: 33.9),
+          Expanded(child: Center(child: Image.asset(product.image))),
+          const SizedBox(height: 33.9),
           Text(
-            'Red Apple',
+            product.titel,
             style: TextStyle(
               color: Color(0xff181725),
               fontSize: 16,
               fontWeight: .w600,
             ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
           Text(
-            '1kg, Priceg',
+            product.discripion,
             style: TextStyle(
               color: Color(0xff7C7C7C),
               fontSize: 14,
@@ -37,12 +41,12 @@ class ProductItem extends StatelessWidget {
             ),
           ),
 
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                '\$$price',
+                '\$${product.price}',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: .w600,
