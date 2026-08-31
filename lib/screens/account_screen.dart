@@ -56,7 +56,7 @@ class AccountScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 20,
                       color: Colors.green,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   Positioned(
@@ -64,6 +64,7 @@ class AccountScreen extends StatelessWidget {
                     child: Icon(
                       Icons.logout_outlined,
                       size: 24,
+                      fontWeight: .bold,
                       color: Colors.green,
                     ),
                   ),
