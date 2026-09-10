@@ -60,7 +60,6 @@ class _HomeSliderState extends State<HomeSlider> {
         ),
       ],
     );
-    ;
   }
 }
 

@@ -64,7 +64,6 @@ class AccountScreen extends StatelessWidget {
                     child: Icon(
                       Icons.logout_outlined,
                       size: 24,
-                      fontWeight: .bold,
                       color: Colors.green,
                     ),
                   ),
