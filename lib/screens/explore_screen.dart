@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gorcery_app/models/category_model.dart';
+import 'package:gorcery_app/screens/search_screen.dart';
 import 'package:gorcery_app/screens/widges/category_item.dart';
 import 'package:gorcery_app/screens/widges/shop_search_item.dart';
 
@@ -22,15 +23,23 @@ class ExploreScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          const ShopSearchItem(),
+          ShopSearchItem(
+            readOnly: true,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SearchScreen()),
+              );
+            },
+          ),
           const SizedBox(height: 24),
           Expanded(
             child: GridView.builder(
               itemCount: categories.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                crossAxisSpacing: 15,
-                mainAxisSpacing: 15,
+                crossAxisSpacing: 14,
+                mainAxisSpacing: 14,
                 childAspectRatio: 0.92,
               ),
               itemBuilder: (context, index) {
@@ -58,12 +67,12 @@ List<CategoryModel> categories = [
   CategoryModel(
     title: 'Meat & Fish',
     image: 'assets/icons/meat.png',
-    color: const Color(0xffF7A593),
+    color: const Color(0xffFAE1E1),
   ),
   CategoryModel(
     title: 'Bakery & Snacks',
     image: 'assets/icons/bakery.png',
-    color: const Color(0xffD3B0E0),
+    color: const Color(0xffFCE7D3),
   ),
   CategoryModel(
     title: 'Dairy & Eggs',

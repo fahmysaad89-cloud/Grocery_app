@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 
 class ShopSearchItem extends StatelessWidget {
-  const ShopSearchItem({super.key});
+  final dynamic readOnly;
+
+  final dynamic onTap;
+
+  const ShopSearchItem({super.key, this.readOnly = false, this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      readOnly: readOnly,
+      onTap: onTap,
       cursorColor: Color(0xff53B175),
       onTapOutside: (v) {
         FocusScope.of(context).unfocus();
