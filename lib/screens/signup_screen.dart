@@ -87,7 +87,6 @@ class _SignupScreenState extends State<SignupScreen> {
                               builder: (context) => LoginScreen(),
                             ),
                           );
-                          print("gg");
                         }
                       },
                       child: Container(

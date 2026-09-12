@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gorcery_app/models/cart_item_model.dart';
+import 'package:gorcery_app/screens/widges/Checkout_sheet.dart';
 import 'package:gorcery_app/screens/widges/cart_item_widget.dart';
 
 class cartscreen extends StatefulWidget {
@@ -113,7 +114,14 @@ class _cartscreenState extends State<cartscreen> {
                   width: 364,
                   height: 67,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showModalBottomSheet(
+                        context: context,
+                        isScrollControlled: true,
+                        backgroundColor: Colors.transparent,
+                        builder: (context) => CheckoutSheet(total: total),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: kPrimaryGreen,
                       foregroundColor: Colors.white,

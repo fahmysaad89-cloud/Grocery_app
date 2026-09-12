@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gorcery_app/screens/login_screen.dart';
 import 'package:gorcery_app/screens/widges/account_info.dart';
 import 'package:gorcery_app/screens/widges/account_option.dart';
 
@@ -39,35 +40,43 @@ class AccountScreen extends StatelessWidget {
             AccountOption(text: 'Help', icon: Icons.help_outline_outlined),
             AccountOption(text: 'About ', icon: Icons.info_outlined),
             SizedBox(height: 52.23),
-            Container(
-              width: 364,
-              // height: 67,
-              padding: EdgeInsets.symmetric(vertical: 26.5),
-              decoration: BoxDecoration(
-                color: Color(0xffF2F3F2),
-                borderRadius: BorderRadius.circular(19),
-              ),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                );
+              },
+              child: Container(
+                width: 364,
+                // height: 67,
+                padding: EdgeInsets.symmetric(vertical: 26.5),
+                decoration: BoxDecoration(
+                  color: Color(0xffF2F3F2),
+                  borderRadius: BorderRadius.circular(19),
+                ),
 
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  Text(
-                    'Log Out',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.green,
-                      fontWeight: FontWeight.bold,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Text(
+                      'Log Out',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.green,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  Positioned(
-                    left: 25,
-                    child: Icon(
-                      Icons.logout_outlined,
-                      size: 24,
-                      color: Colors.green,
+                    Positioned(
+                      left: 25,
+                      child: Icon(
+                        Icons.logout_outlined,
+                        size: 24,
+                        color: Colors.green,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],
