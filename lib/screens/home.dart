@@ -17,8 +17,8 @@ class _HomeState extends State<Home> {
   List<Widget> sccrens = [
     ShopScreen(),
     ExploreScreen(),
-    CartScreen(),
-    FavouriteScreen(),
+    cartscreen(),
+    favouritescreen(),
     AccountScreen(),
   ];
   @override

@@ -62,18 +62,21 @@ class SearchProductItem extends StatelessWidget {
                 Text(
                   '\$${product.price}',
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 18,
                     fontWeight: FontWeight.w600,
                     color: Color(0xff181725),
                   ),
                 ),
                 Container(
+                  width: 45.67,
+                  height: 45.67,
                   padding: const EdgeInsets.all(6),
-                  decoration: const BoxDecoration(
-                    color: Color(0xff53B175),
-                    shape: BoxShape.circle,
+                  decoration: BoxDecoration(
+                    color: const Color(0xff53B175),
+                    borderRadius: BorderRadius.circular(16),
+                    // shape: BoxShape.circle,
                   ),
-                  child: const Icon(Icons.add, color: Colors.white, size: 16),
+                  child: const Icon(Icons.add, color: Colors.white, size: 26),
                 ),
               ],
             ),
